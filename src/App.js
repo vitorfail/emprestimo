@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App(){
 	const [UF, setUF ] = useState()
@@ -18,13 +19,42 @@ function App(){
 	const [VALOR_TABELA_CARROS, setVALOR_TABELA_CARROS ] = useState()
 	const [SCORE_CREDITO, setSCORE_CREDITO ] = useState()
 
+	function analise(){
+		axios.post('', {UF: UF,
+			IDADE: IDADE,
+			ESCOLARIDADE: ESCOLARIDADE,
+			ESTADO_CIVIL: ESTADO_CIVIL,
+			QT_FILHOS: QT_FILHOS,
+			CASA_PROPRIA: CASA_PROPRIA,
+			QT_IMOVEIS: QT_IMOVEIS,
+			VL_IMOVEIS: VL_IMOVEIS,
+			OUTRA_RENDA_VALOR: OUTRA_RENDA_VALOR,
+			TEMPO_ULTIMO_EMPREGO_MESES: TEMPO_ULTIMO_EMPREGO_MESES,
+			TRABALHANDO_ATUALMENTE: TRABALHANDO_ATUALMENTE,
+			ULTIMO_SALARIO: ULTIMO_SALARIO,
+			QT_CARROS: QT_CARROS,
+			VALOR_TABELA_CARROS: VALOR_TABELA_CARROS,
+			SCORE_CREDITO: SCORE_CREDITO}
+		).then( res => {
+			console.log(res.data)
+		})
+		.catch(error => {
+			console.log('deu errado')
+		})
+	}
 
 	return(
 		<div className='app'>
 			<div>
 				<div className='box-input'>
 					<h3>UF</h3>
-					<select value={UF} ></select>
+					<select onChange={(event) => setUF(event.currentTarget.value)}>
+						<option value={0}>MG</option>
+						<option value={1}>PR</option>
+						<option value={2}>RJ</option>
+						<option value={3}>SC</option>
+						<option value={4}>SP</option>
+					</select>
 				</div>
 				<div className='box-input'>
 					<h3>Idade</h3>
@@ -44,7 +74,10 @@ function App(){
 				</div>
 				<div className='box-input'>
 					<h3>Casa própria</h3>
-					<select value={CASA_PROPRIA} ></select>
+					<select onChange={(event) => setCASA_PROPRIA(event.currentTarget.value)}>
+						<option value={0}>Não</option>
+						<option value={1}>Sim</option>
+					</select>
 				</div>
 				<div className='box-input'>
 					<h3>Quantidade imóveis</h3>
@@ -64,7 +97,10 @@ function App(){
 				</div>
 				<div className='box-input'>
 					<h3>Trabalhando atualmente</h3>
-					<select value={TRABALHANDO_ATUALMENTE} ></select>
+					<select onChange={(event) => setTRABALHANDO_ATUALMENTE(event.currentTarget.value)}>
+						<option value={1}>Sim</option>
+						<option value={0}>Não</option>
+					</select>
 				</div>
 				<div className='box-input'>
 					<h3>Último salário</h3>
