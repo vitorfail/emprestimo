@@ -20,21 +20,10 @@ function App(){
 	const [SCORE_CREDITO, setSCORE_CREDITO ] = useState()
 
 	function analise(){
-		axios.post('', {UF: UF,
-			IDADE: IDADE,
-			ESCOLARIDADE: ESCOLARIDADE,
-			ESTADO_CIVIL: ESTADO_CIVIL,
-			QT_FILHOS: QT_FILHOS,
-			CASA_PROPRIA: CASA_PROPRIA,
-			QT_IMOVEIS: QT_IMOVEIS,
-			VL_IMOVEIS: VL_IMOVEIS,
-			OUTRA_RENDA_VALOR: OUTRA_RENDA_VALOR,
-			TEMPO_ULTIMO_EMPREGO_MESES: TEMPO_ULTIMO_EMPREGO_MESES,
-			TRABALHANDO_ATUALMENTE: TRABALHANDO_ATUALMENTE,
-			ULTIMO_SALARIO: ULTIMO_SALARIO,
-			QT_CARROS: QT_CARROS,
-			VALOR_TABELA_CARROS: VALOR_TABELA_CARROS,
-			SCORE_CREDITO: SCORE_CREDITO}
+		axios.post('https://ia-emprestimo.herokuapp.com/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
+			QT_IMOVEIS,  VL_IMOVEIS, OUTRA_RENDA_VALOR, TEMPO_ULTIMO_EMPREGO_MESES,
+			TRABALHANDO_ATUALMENTE, ULTIMO_SALARIO,
+			QT_CARROS, VALOR_TABELA_CARROS, SCORE_CREDITO]}
 		).then( res => {
 			console.log(res.data)
 		})
@@ -42,10 +31,12 @@ function App(){
 			console.log('deu errado')
 		})
 	}
-
 	return(
 		<div className='app'>
-			<div>
+			<div className='emprestimo'>
+				
+			</div>
+			<div className='entradas'>
 				<div className='box-input'>
 					<h3>UF</h3>
 					<select onChange={(event) => setUF(event.currentTarget.value)}>
