@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import X from './x.png'
-import V from './v.png'
-import Data from './datasets.png'
+import X from './icons/x.png'
+import V from './icons/v.png'
+import Data from './icons/datasets.PNG'
 
 function App(){
 	const [inicio, setinicio] = useState(true) 
