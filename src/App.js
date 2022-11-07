@@ -6,7 +6,7 @@ import V from './icons/v.png'
 import Data from './icons/datasets.PNG'
 
 function App(){
-	const [inicio, setinicio] = useState(true) 
+	const [inicio, setinicio] = useState(false) 
 	const [aprovado, setaprovado] = useState(false) 
 	const [UF, setUF ] = useState(0)
 	const [IDADE, setIDADE ] = useState(10)
@@ -44,10 +44,11 @@ function App(){
 		})
 	}
 	useEffect(() => {
-		setinicio(false)
+		setinicio(true)
 	},[setinicio])
 	return(
 		<div className='app'>
+			
 			<div className='emprestimo'>
 				<div className='entradas'>
 					<div className='box-input'>
@@ -137,16 +138,17 @@ function App(){
 						<h2>Teste sua aprovação</h2>
 					</div>: false}
 					{aprovado? <div className='positivo'>
-						<img src={X}/>
+						<img src={V}/>
 						<h2>Aprovado</h2>
 						<h3>Você passou na simulação</h3>
 					</div>: <div className='negativo'>
-						<img src={V}/>
+						<img src={X}/>
 						<h2>Reprovado</h2>
 						<h3>Seu empréstimo não passou an silumação</h3>
 					</div>}
 				</div>
 			</div>
+			<button onClick={() => analise()}>Simular</button>
 			<div className='info'>
 				<h2>Como funciona?</h2>
 				<h3>A simulação funciona através do método de predição, esse que por sua vez acontece quando ensinamos a máquina. 
