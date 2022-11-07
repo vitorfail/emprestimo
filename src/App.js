@@ -98,11 +98,11 @@ function App(){
 					</div>
 					<div className='box-input'>
 						<h3>Valor imóveis</h3>
-						<input value={VL_IMOVEIS} onChange={(event) => setVL_IMOVEIS(event.target.value)}  placeholder='R$ 000,00'>R$ </input>
+						<input value={VL_IMOVEIS} onChange={(event) => setVL_IMOVEIS(event.target.value)}  placeholder='R$ 000,00'></input>
 					</div>
 					<div className='box-input'>
 						<h3>Rendas extras</h3>
-						<input value={OUTRA_RENDA_VALOR} onChange={(event) => setOUTRA_RENDA_VALOR(event.target.value)}  placeholder='R$ 000,00'>R$ </input>
+						<input value={OUTRA_RENDA_VALOR} onChange={(event) => setOUTRA_RENDA_VALOR(event.target.value)}  placeholder='R$ 000,00'></input>
 					</div>
 					<div className='box-input'>
 						<h3>Tempo do último emprego</h3>
@@ -117,7 +117,7 @@ function App(){
 					</div>
 					<div className='box-input'>
 						<h3>Último salário</h3>
-						<input value={ULTIMO_SALARIO} onChange={(event) => setULTIMO_SALARIO(event.target.value)}  placeholder='R$ 000,00'>R$ </input>
+						<input value={ULTIMO_SALARIO} onChange={(event) => setULTIMO_SALARIO(event.target.value)}  placeholder='R$ 000,00'></input>
 					</div>
 					<div className='box-input'>
 						<h3>Quanidade de carros</h3>
@@ -125,7 +125,7 @@ function App(){
 					</div>
 					<div className='box-input'>
 						<h3>Valor de mercado dos carros</h3>
-						<input value={VALOR_TABELA_CARROS} onChange={(event) => setVALOR_TABELA_CARROS(event.target.value)}  placeholder='R$ 000,00'>R$ </input>
+						<input value={VALOR_TABELA_CARROS} onChange={(event) => setVALOR_TABELA_CARROS(event.target.value)}  placeholder='R$ 000,00'></input>
 					</div>
 					<div className='box-input'>
 						<h3>Score(Crédito)</h3>
