@@ -25,7 +25,7 @@ function App(){
 	const [SCORE_CREDITO, setSCORE_CREDITO ] = useState(0)
 
 	function analise(){
-		axios.post('https://ia-emprestimo.herokuapp.com/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
+		axios.post('https://ia-emprestimo-production.up.railway.app/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
 			QT_IMOVEIS,  VL_IMOVEIS, OUTRA_RENDA_VALOR, TEMPO_ULTIMO_EMPREGO_MESES,
 			TRABALHANDO_ATUALMENTE, ULTIMO_SALARIO,
 			QT_CARROS, VALOR_TABELA_CARROS, SCORE_CREDITO]}
