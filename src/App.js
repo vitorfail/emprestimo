@@ -45,10 +45,18 @@ function App(){
 	}
 	useEffect(() => {
 		setinicio(true)
+		let btn = document.querySelector('.info');
+		btn.addEventListener('mouseover', e => {
+			let rect = e.target.getBoundingClientRect();
+			let x = e.clientX - rect.left;
+			let y = e.clientY - rect.top;
+			btn.style.setProperty('--x', x + 'px');
+			btn.style.setProperty('--y', y + 'px');
+			console.log(x)
+		});
 	},[setinicio])
 	return(
 		<div className='app'>
-			
 			<div className='emprestimo'>
 				<div className='entradas'>
 					<div className='box-input'>
