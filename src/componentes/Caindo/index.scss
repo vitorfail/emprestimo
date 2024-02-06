@@ -1,0 +1,27 @@
+
+.folhas {
+	width: 430px; /* Largura da folha */
+	height: 30px; /* Altura da folha */
+	background-size: cover;
+	animation: quedaFolhas 10s linear infinite; /* Ajuste a duração conforme necessário */
+}
+.folhas div{
+    transition: all 0.2s ease-in-out;
+    animation: cair 5s infinite;
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+@keyframes cair {
+    0%{
+        transform: rotateZ(0);
+        margin-top: 0;
+    }
+    100%{
+        transform: rotateZ(30);
+        margin-top: -100%;
+    
+    }
+
+}

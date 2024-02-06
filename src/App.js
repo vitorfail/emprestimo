@@ -4,6 +4,7 @@ import axios from 'axios';
 import X from './icons/x.png'
 import V from './icons/v.png'
 import Data from './icons/datasets.PNG'
+import Caindo from './componentes/Caindo';
 
 function App(){
 	const [inicio, setinicio] = useState(false) 
@@ -57,6 +58,9 @@ function App(){
 	},[setinicio])
 	return(
 		<div className='app'>
+			<div className='dinheiro'>
+				<Caindo img={imagens} ></Caindo>
+			</div>
 			<div className='emprestimo'>
 				<div className='entradas'>
 					<div className='box-input'>
@@ -140,20 +144,6 @@ function App(){
 						<h3>Score(Crédito)</h3>
 						<input  value={SCORE_CREDITO} onChange={(event) => setSCORE_CREDITO(event.target.value)} placeholder='000'></input>
 					</div>
-				</div>
-				<div className='resultado'>
-					{inicio? <div className='inicio'>
-						<h2>Teste sua aprovação</h2>
-					</div>: false}
-					{aprovado? <div className='positivo'>
-						<img src={V}/>
-						<h2>Aprovado</h2>
-						<h3>Você passou na simulação</h3>
-					</div>: <div className='negativo'>
-						<img src={X}/>
-						<h2>Reprovado</h2>
-						<h3>Seu empréstimo não passou an silumação</h3>
-					</div>}
 				</div>
 			</div>
 			<button onClick={() => analise()}>Simular</button>
