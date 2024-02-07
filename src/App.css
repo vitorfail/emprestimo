@@ -47,6 +47,7 @@ body{
 
 }
 .emprestimo .result h3{
+	height: 100px;
 	text-align: center;
 	width: 70%;
 }

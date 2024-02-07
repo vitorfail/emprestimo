@@ -13,7 +13,9 @@ import Loading from './componentes/Loading';
 
 
 function App(){
-	const imagens = [C1, C2, C3,C1, C4, C3,C1, C2, C3,C1, C4, C3, C1, C4, C3, C1, C2, C3, C1, C4, C3]	
+	const [status, setstatus] = useState("Fazer Análise")
+	const imagens = [C1, C2, C3,C1, C4, C3,C1, C2, C3,C1, C4, C3, C1, C4, C3, C1, C2, C3, C1, C4, C3]
+	const [comecar, setcomecar] = useState(false)	
 	const [inicio, setinicio] = useState(false) 
 	const [aprovado, setaprovado] = useState(false) 
 	const [UF, setUF ] = useState(0)
@@ -33,6 +35,8 @@ function App(){
 	const [SCORE_CREDITO, setSCORE_CREDITO ] = useState(0)
 
 	function analise(){
+		setcomecar(true)
+		setstatus("Aguarde.....")
 		axios.post('https://ia-emprestimo-production.up.railway.app/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
 			QT_IMOVEIS,  VL_IMOVEIS, OUTRA_RENDA_VALOR, TEMPO_ULTIMO_EMPREGO_MESES,
 			TRABALHANDO_ATUALMENTE, ULTIMO_SALARIO,
@@ -48,7 +52,10 @@ function App(){
 			}
 		})
 		.catch(error => {
-			console.log('deu errado')
+			setTimeout(function(){
+				setcomecar(false);
+				setstatus("Fazer Análise")
+			}, 7000)
 		})
 	}
 	useEffect(() => {
@@ -158,8 +165,8 @@ function App(){
 				</div>
 				<div className='result'>
 					<h3>Aperter o  botão apenas depois de ter preenchido os campos</h3>
-					<button>Fazer análise</button>
-					<Loading largura={200} ></Loading>
+					<button onClick={() => analise()}>{status} </button>
+					<Loading show={comecar?"flex":"none"} largura={200} ></Loading>
 				</div>
 			</div>
 						<div className='info'>
