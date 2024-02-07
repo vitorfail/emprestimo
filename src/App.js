@@ -5,8 +5,13 @@ import X from './icons/x.png'
 import V from './icons/v.png'
 import Data from './icons/datasets.PNG'
 import Caindo from './componentes/Caindo';
+import C1 from "./icons/c1.png"
+import C2 from "./icons/c2.png"
+import C3 from "./icons/c3.png"
 
 function App(){
+	const imagens = [C1, C2, C3,C1, C2, C3,C1, C2, C3,C1, C2, C3, C1, C2, C3, C1, C2, C3, C1, C2, C3, C1,
+		 C2, C3, C1, C2, C3,C1, C2, C3, C1, C2, C3, C1, C2, C3, C1, C2, C3]
 	const [inicio, setinicio] = useState(false) 
 	const [aprovado, setaprovado] = useState(false) 
 	const [UF, setUF ] = useState(0)
@@ -61,6 +66,9 @@ function App(){
 			<div className='dinheiro'>
 				<Caindo img={imagens} ></Caindo>
 			</div>
+			<div className='dinheiro'>
+				<Caindo img={imagens} ></Caindo>
+			</div>			
 			<div className='emprestimo'>
 				<div className='entradas'>
 					<div className='box-input'>
@@ -146,7 +154,6 @@ function App(){
 					</div>
 				</div>
 			</div>
-			<button onClick={() => analise()}>Simular</button>
 			<div className='info'>
 				<h2>Como funciona?</h2>
 				<h3>A simulação funciona através do método de predição, esse que por sua vez acontece quando ensinamos a máquina. 
