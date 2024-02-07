@@ -7,7 +7,6 @@ body{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	background: whitesmoke;
@@ -31,22 +30,44 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
-	background: white;
-	margin-top: 1030px;
-	width: 50%;
+	width: 80%;
 	height: auto;
+}
+.titulo h2{
+	font-size: 40px;
+	font-family: Roboto forte;
+}
+.titulo{
+	color: white;
+	margin-left: -43%;
+	z-index: 12;
+	position: relative;
+	margin-top: 25vh;
+	margin-bottom: 12px;
+
+}
+.emprestimo .result h3{
+	text-align: center;
+	width: 70%;
+}
+.emprestimo .result{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 35%;
+	height: 100%;
 }
 .entradas ,.resultado{
 	height: 100%;
 }
 .entradas{
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
+	background: white;
 	height: 616px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	background: transparent;
-	width: 90%;
+	width: 50%;
 }
 .resultado{
 	border-bottom-right-radius: 30px;
@@ -131,8 +152,7 @@ body{
 	border: 2 solid rgba(66, 6, 61, 0.774);
 }
 .info{
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
-	background: white;
+	background: rgb(233, 233, 233);
 	margin-top: 120px;
 	position: relative;
 	padding: 0.5rem 1rem;
@@ -141,9 +161,9 @@ body{
 	color: rgb(0, 0, 0);
 	cursor: pointer;
 	outline: none;
-	width: 80%;
+	width: 100%;
 	height: 700px;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -172,43 +192,37 @@ body{
 
 }
 .app button{
+	margin-top: -15px;
 	transition: all ease 0.2s;
 	outline: none;
 	border: none;
-	border-bottom-right-radius: 30px;
-	border-bottom-left-radius: 30px;
-	width: 80%;
+	border-radius: 20px;
+	width: 60%;
 	height: 45px;
-	font-size: 27px;
+	font-size: 15px;
 	color: white;
 	font-family: Roboto forte;
-	background-color: rgb(112, 4, 116);
+	background-color: var(--cor);
 }
 .app button:hover{
-	background: black;
+	background: transparent;
 	cursor: pointer;
-	color: rgb(229, 10, 236);
-	border: 3px solid rgb(112, 4, 116);
+	color: var(--cor);
+	border: 3px solid var(--cor);
 }
 .dinheiro{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	position: absolute;
 	z-index: 0;
-	height: 345px;
+	height: 545px;
 	width: 80%;
 	transform: rotateZ(-45deg);
-	margin-left: -60%;
-	background: linear-gradient(to bottom right,rgb(7, 197, 7), rgb(116, 248, 116));
-	border-top-right-radius: 200px;
-	border-bottom-right-radius: 200px;
-	margin-top: 300px;
-}
-.dinheiro:nth-child(2){
-	margin-top: 1000px;
-	margin-left: 10%;
-	height: 125px;
-	transform: rotateZ(-45deg);
+	margin-left: -70%;
+	background: var(--cor);
+	border-top-right-radius: 400px;
+	border-bottom-right-radius: 400px;
+	margin-top: 20%;
 }
 @media screen and (max-width:690px){
 	.emprestimo {

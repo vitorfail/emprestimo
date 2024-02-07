@@ -1,16 +1,17 @@
 .folhas {
-	width: 100%;
+	width: 65%;
 	height: 100%; 
     display: flex;
     justify-content: space-evenly;
 	background-size: cover;
-	animation: quedaFolhas 10s linear infinite; /* Ajuste a duração conforme necessário */
 }
-.folhas div{
+.folhas img{
     opacity: 0;
     display: flex;
     transition: all 0.2s ease-in-out;
-    animation: cair 5s infinite ease-in-out;
+    animation: cair 5s linear infinite ;
+    animation-duration: calc(105s / var(--i)); /* Ajuste a duração conforme necessário */
+
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -25,12 +26,12 @@
         opacity: 0.8;
     }
     90%{
-        opacity: 0;
+        opacity: 7;
     }
     100%{
         opacity: 0;
 
-        transform: translateY(310px) rotateZ(90deg) rotateY(0deg);
+        transform: translateY(80vh) rotateZ(90deg) rotateY(112deg);
     }
 
 }

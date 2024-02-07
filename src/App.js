@@ -8,10 +8,12 @@ import Caindo from './componentes/Caindo';
 import C1 from "./icons/c1.png"
 import C2 from "./icons/c2.png"
 import C3 from "./icons/c3.png"
+import C4 from "./icons/c4.png"
+import Loading from './componentes/Loading';
+
 
 function App(){
-	const imagens = [C1, C2, C3,C1, C2, C3,C1, C2, C3,C1, C2, C3, C1, C2, C3, C1, C2, C3, C1, C2, C3, C1,
-		 C2, C3, C1, C2, C3,C1, C2, C3, C1, C2, C3, C1, C2, C3, C1, C2, C3]
+	const imagens = [C1, C2, C3,C1, C4, C3,C1, C2, C3,C1, C4, C3, C1, C4, C3, C1, C2, C3, C1, C4, C3]	
 	const [inicio, setinicio] = useState(false) 
 	const [aprovado, setaprovado] = useState(false) 
 	const [UF, setUF ] = useState(0)
@@ -66,9 +68,10 @@ function App(){
 			<div className='dinheiro'>
 				<Caindo img={imagens} ></Caindo>
 			</div>
-			<div className='dinheiro'>
-				<Caindo img={imagens} ></Caindo>
-			</div>			
+			<div className='titulo'>
+				<h2>Quer tentar?</h2>
+				<h3>Preencha os campos</h3>
+			</div>
 			<div className='emprestimo'>
 				<div className='entradas'>
 					<div className='box-input'>
@@ -153,8 +156,13 @@ function App(){
 						<input  value={SCORE_CREDITO} onChange={(event) => setSCORE_CREDITO(event.target.value)} placeholder='000'></input>
 					</div>
 				</div>
+				<div className='result'>
+					<h3>Aperter o  botão apenas depois de ter preenchido os campos</h3>
+					<button>Fazer análise</button>
+					<Loading largura={200} ></Loading>
+				</div>
 			</div>
-			<div className='info'>
+						<div className='info'>
 				<h2>Como funciona?</h2>
 				<h3>A simulação funciona através do método de predição, esse que por sua vez acontece quando ensinamos a máquina. 
 					O processo de aprendizagem da máquina, ou machine learning, acontece quando passamos informações, seja por tabelas, excel e etc. Chamamos esse conjuntos de dados de <strong>dataset</strong>
