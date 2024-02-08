@@ -6,6 +6,15 @@
     margin-top: 30px;
     display: none;
 }
+.chuva .lista.show{
+    display: flex;
+}
+.chuva .lista{
+    justify-content: space-between;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
 .chuva{
     justify-content: space-between;
     display: flex;
@@ -36,7 +45,7 @@
     font-size: 20px;
     font-weight: 500;
     height: 25px;
-    animation: chuva 0.5s linear infinite;
+    animation: chuva 0.5s ease-in-out infinite;
     animation-duration: calc(10s /var(--i));
     animation-delay: 0.8s;
 
