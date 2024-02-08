@@ -19,7 +19,7 @@
     background: var(--cor);
     margin-bottom: 10px;
 }
-.dedos div:nth-child(1), .dedos div:nth-child(2), .dedos div:nth-child(3), .dedos div:nth-child(4){
+.dedos div:nth-child(1), .dedos div:nth-child(2), .dedos div:nth-child(3), .dedos div:nth-child(4), .dedos div:nth-child(5){
     border-radius: 10px;
     border: 2px solid var(--cor);
     width: 15%;
@@ -27,26 +27,51 @@
     align-items: flex-end;
     justify-content: center;
     background: white;
+    z-index: 1;
+
 }
 .dedos div:nth-child(1){
     animation: dedo1 1.5s linear infinite;
-    animation-duration: 0.9s;
+    animation-duration: 1.2s;
     height: 60%;
 }
 .dedos div:nth-child(2){
-    animation: dedo2 0.5s linear infinite;
-    animation-duration: 0.9s;
+    animation: dedo2 1.5s linear infinite;
+    animation-duration: 1.1s;
     height: 70%;
 }
 .dedos div:nth-child(3){
     animation: dedo3 1.5s linear infinite;
-    animation-duration: 0.8s;
+    animation-duration: 1.3s;
     height: 80%;
 }
 .dedos div:nth-child(4){
-    animation: dedo2 2.5s linear infinite;
-    animation-duration: 0.7s;
+    animation: dedo2 1.5s linear infinite;
+    animation-duration: 1.5s;
     height: 70%;
+}
+.dedos div:nth-child(5){
+    animation: dedo5 1.5s linear infinite;
+    margin-right: -100px;
+    margin-top: -5px;
+    z-index: 0;
+    animation-duration: 2s;
+    border-radius: 17% 56% 10% 73% / 35% 64% 10% 54%;
+    height: 29px;
+    width: 68px;
+    border: 2px solid var(--cor);
+    position: absolute;
+}
+.dedos i{
+    position: absolute;
+    background: whitesmoke;
+    width: 110px;
+    height: 120px;
+}
+.loading h3{
+    color: var(--cor);
+    margin-top: 250px;
+    position: absolute;
 }
 @keyframes bola {
     from {
@@ -103,7 +128,7 @@
         height: 70%;
     }
     50%{
-        transform: rotate3d(1, 0, 0, 17deg);
+        transform: rotate3d(1, 0, 0, 25deg);
         height: 60%;
         margin-top: -50px;
     }
@@ -139,5 +164,27 @@
     100%{
         height: 80%;
         margin-top: 0px;
+    }
+}
+@keyframes dedo5 {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    30%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(-45deg);    
+    }
+    70%{
+        transform: rotateZ(-45deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+@media screen and (max-width:600px) {
+    .loading h3{
+        width: 100%;
     }
 }

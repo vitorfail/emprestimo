@@ -18,8 +18,9 @@ export default function Loading(props){
                     <span></span>
                 </div>
                 <div>
-                    <span></span>
                 </div>
+                <i></i>
+                <h3>Aguarde......</h3>
             </div>
         </div>
     )

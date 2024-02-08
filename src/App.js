@@ -10,10 +10,13 @@ import C2 from "./icons/c2.png"
 import C3 from "./icons/c3.png"
 import C4 from "./icons/c4.png"
 import Loading from './componentes/Loading';
+import Negado from './componentes/Negado';
+import Aprovado from './componentes/Aprovado';
 
 
 function App(){
 	const [status, setstatus] = useState("Fazer Análise")
+	const [ resultado, setresultado] = useState(0)
 	const imagens = [C1, C2, C3,C1, C4, C3,C1, C2, C3,C1, C4, C3, C1, C4, C3, C1, C2, C3, C1, C4, C3]
 	const [comecar, setcomecar] = useState(false)	
 	const [inicio, setinicio] = useState(false) 
@@ -35,6 +38,7 @@ function App(){
 	const [SCORE_CREDITO, setSCORE_CREDITO ] = useState(0)
 
 	function analise(){
+		setresultado(0)
 		setcomecar(true)
 		setstatus("Aguarde.....")
 		axios.post('https://ia-emprestimo-production.up.railway.app/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
@@ -43,10 +47,24 @@ function App(){
 			QT_CARROS, VALOR_TABELA_CARROS, SCORE_CREDITO]}
 		).then( res => {
 			if(res.data === 'NAO'){
+				setTimeout(function(){
+					let html = document.querySelector('html');
+					html.className = "reprovado";
+					setcomecar(false); 
+					setresultado(2)
+					setstatus("Fazer Análise")
+				}, 4000)	
 				setinicio(false)
 				setaprovado(false)
 			}
 			if(res.data === 'SIM'){
+				setTimeout(function(){
+					let html = document.querySelector('html');
+					html.className = "aprovado";
+					setcomecar(false); 
+					setresultado(1)
+					setstatus("Fazer Análise")
+				}, 4000)	
 				setinicio(false)
 				setaprovado(true)
 			}
@@ -55,7 +73,8 @@ function App(){
 			setTimeout(function(){
 				let html = document.querySelector('html');
                 html.className = "reprovado";
-				setcomecar(false);
+				setcomecar(false); 
+				setresultado(2)
 				setstatus("Fazer Análise")
 			}, 4000)
 		})
@@ -169,6 +188,9 @@ function App(){
 					<h3>Aperter o  botão apenas depois de ter preenchido os campos</h3>
 					<button onClick={() => analise()}>{status} </button>
 					<Loading show={comecar?"flex":"none"} largura={200} ></Loading>
+					{resultado==2?<Negado show={"flex"} largura={200}></Negado>:<div></div>}
+					{resultado==1?<Aprovado show={"flex"} largura={200}></Aprovado>:<div></div>}
+					
 				</div>
 			</div>
 						<div className='info'>

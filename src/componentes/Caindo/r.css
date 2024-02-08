@@ -30,8 +30,27 @@
     }
     100%{
         opacity: 0;
-
         transform: translateY(80vh) rotateZ(90deg) rotateY(112deg);
     }
-
+}
+@keyframes cair2 {
+    0%{
+        opacity: 0.5;
+        transform: translateY(-20px)
+    }
+    6%{
+        opacity: 0.8;
+    }
+    90%{
+        opacity: 7;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(30vh) rotateZ(90deg) rotateY(112deg);
+    }
+}
+@media screen and (max-width:600px) {
+    .folhas img{
+        animation: cair2 1s linear infinite ;
+    }
 }

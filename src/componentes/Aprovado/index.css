@@ -1,0 +1,72 @@
+
+.negado.show{
+    display: flex;
+}
+.negado{
+    display: none;
+}
+.chuva{
+    justify-content: space-between;
+    display: flex;
+    width: auto;
+    height: 100%;
+}
+.chuva img{
+    border-radius: 50%;
+    animation: reprov 0.4s linear;
+    margin-top: 50px;
+    margin-left: 20px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+.chuva i{
+    opacity: 0;
+    border-radius: 50%;
+    border: 1px solid var(--cor);
+    font-style: normal;
+    display: flex;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor);
+    width: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    height: 25px;
+    animation: chuva 0.5s linear infinite;
+    animation-duration: calc(10s /var(--i));
+    animation-delay: 0.8s;
+
+}
+@keyframes chuva {
+    0%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+    70%{
+        transform: translateY(300px) scale(1);
+    }
+    100%{
+        transform: translateY(300px) scale(0);
+        opacity: 1;
+    }
+}
+@keyframes reprov {
+    0%{
+        opacity: 0;
+        scale: 2;
+        box-shadow: 0px 0px 0px var(--cor);
+    }
+    70%{
+        box-shadow: 0px 0px 37px var(--cor);
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        box-shadow: 0px 0px 37px var(--cor);
+        opacity: 1;
+        scale: 1;
+    }
+}
