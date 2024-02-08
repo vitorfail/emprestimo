@@ -1,4 +1,15 @@
 :root{
+    --cor:rgb(0, 55, 128);
+    --cor2:rgb(25, 90, 175);
+    --duracao-transicao:0.5s;
+}
+.aprovado:root{
+    --duracao-transicao:0.5s;
     --cor:green;
     --cor2:rgb(38, 216, 38);
+}
+.reprovado:root{
+    --duracao-transicao:0.5s;
+    --cor:red;
+    --cor2:rgb(243, 72, 72);
 }

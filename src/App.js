@@ -53,9 +53,11 @@ function App(){
 		})
 		.catch(error => {
 			setTimeout(function(){
+				let html = document.querySelector('html');
+                html.className = "reprovado";
 				setcomecar(false);
 				setstatus("Fazer Análise")
-			}, 7000)
+			}, 4000)
 		})
 	}
 	useEffect(() => {

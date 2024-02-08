@@ -203,6 +203,7 @@ body{
 	font-size: 15px;
 	color: white;
 	font-family: Roboto forte;
+	transition: background-color var(--duracao-transicao), color var(--duracao-transicao);
 	background-color: var(--cor);
 }
 .app button:hover{
@@ -212,6 +213,7 @@ body{
 	border: 3px solid var(--cor);
 }
 .dinheiro{
+	transition: background-color var(--duracao-transicao), color var(--duracao-transicao);
 	display: flex;
 	justify-content: flex-start;
 	position: absolute;
