@@ -41,7 +41,7 @@ function App(){
 		setresultado(0)
 		setcomecar(true)
 		setstatus("Aguarde.....")
-		axios.post('https://ia-emprestimo-production.up.railway.app/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
+		axios.post('https://ia-emprestimo-git-master-vitorfail.vercel.app/', {dados:[ UF, IDADE, ESCOLARIDADE, ESTADO_CIVIL, QT_FILHOS, CASA_PROPRIA,
 			QT_IMOVEIS,  VL_IMOVEIS, OUTRA_RENDA_VALOR, TEMPO_ULTIMO_EMPREGO_MESES,
 			TRABALHANDO_ATUALMENTE, ULTIMO_SALARIO,
 			QT_CARROS, VALOR_TABELA_CARROS, SCORE_CREDITO]}
